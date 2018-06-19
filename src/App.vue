@@ -91,14 +91,14 @@
         <div class="row wrapper border-bottom white-bg page-heading">
           <div class="col-lg-10">
             <h2>Leads Index</h2>
-            <ol class="breadcrumb">
+            <!-- <ol class="breadcrumb">
               <li>
                 <a href="index.html">Home</a>
               </li>
               <li class="active">
                 <strong>Leads Index</strong>
               </li>
-            </ol>
+            </ol> -->
           </div>
           <div class="col-lg-2">
 
@@ -108,9 +108,9 @@
           <div class="row">
             <div class="col-lg-12">
               <div class="ibox float-e-margins">
-                <div class="ibox-title">
+                <!-- <div class="ibox-title">
                   <h5>Leads</h5>
-                </div>
+                </div> -->
                 <div class="ibox-content">
                   <router-view></router-view>
                 </div>
@@ -127,9 +127,6 @@
     name: 'App',
     data() {
       return {
-        auth: {
-          login: true,
-        }
       }
     },
   }

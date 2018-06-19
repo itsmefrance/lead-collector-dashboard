@@ -1,8 +1,8 @@
-import Dashboard from './components/dashboard/dashboard';
+import LeadList from './components/dashboard/lead-list';
 
 export default [
     {
         path: '/',
-        component: Dashboard,
+        component: LeadList,
     },
 ]
