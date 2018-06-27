@@ -17,7 +17,6 @@
         <p>Email Address:
           <strong>{{leadsView.contact.email_address}}</strong>
         </p>
-        <br>
         <p>Browser:
           <strong>{{leadsView.metadata.browser}}</strong>
         </p>
@@ -32,17 +31,18 @@
               <strong>{{event.identifier}}</strong>
             </p>
           </li>
-          <li>
+          <li v-if="event.watchDuration">
             <p>Watch Duration:
               <strong>{{event.watchDuration}}</strong>
             </p>
           </li>
-          <li>
+          <li v-else></li>
+          <li v-if="event.inViewDuration">
             <p>In View Duration:
               <strong>{{event.inViewDuration}}</strong>
             </p>
           </li>
-          <br>
+          <li v-else></li>
         </ul>
       </div>
     </div>
@@ -114,3 +114,14 @@
   }
 
 </script>
+<style>
+  strong {
+    color: #000 !important;
+  }
+
+  ul {
+    list-style: none;
+    padding: 0;
+  }
+
+</style>
