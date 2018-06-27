@@ -41,12 +41,20 @@
             </li>
             <li>
               <router-link to="/">
-                <a href="index.html">
+                <a href="#">
                   <!-- <i class="fa fa-th-large"></i> -->
                   <span class="nav-label">Leads Index</span>
                   <!-- <span class="fa arrow"></span> -->
                 </a>
               </router-link>
+              <router-link to="/">
+                <a href="#">
+                  <!-- <i class="fa fa-th-large"></i> -->
+                  <span class="nav-label">Events Collective</span>
+                  <!-- <span class="fa arrow"></span> -->
+                </a>
+              </router-link>
+
               <!-- <ul class="nav nav-second-level collapse">
                 <li>
                   <a href="index.html">Dashboard v.1</a>
@@ -88,32 +96,27 @@
             </ul>
           </nav>
         </div>
-        <div class="row wrapper border-bottom white-bg page-heading">
+        <!-- <div class="row wrapper border-bottom white-bg page-heading">
           <div class="col-lg-10">
-            <h2>Leads Index</h2>
-            <!-- <ol class="breadcrumb">
+            <h2>Leads</h2>
+            <ol class="breadcrumb">
               <li>
                 <a href="index.html">Home</a>
               </li>
               <li class="active">
                 <strong>Leads Index</strong>
               </li>
-            </ol> -->
+            </ol>
           </div>
           <div class="col-lg-2">
 
           </div>
-        </div>
+        </div> -->
         <div class="wrapper wrapper-content animated fadeInRight">
           <div class="row">
             <div class="col-lg-12">
               <div class="ibox float-e-margins">
-                <!-- <div class="ibox-title">
-                  <h5>Leads</h5>
-                </div> -->
-                <div class="ibox-content">
-                  <router-view></router-view>
-                </div>
+                <router-view></router-view>
               </div>
             </div>
           </div>
@@ -126,8 +129,7 @@
   export default {
     name: 'App',
     data() {
-      return {
-      }
+      return {}
     },
   }
 
