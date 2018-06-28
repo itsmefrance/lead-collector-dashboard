@@ -67,20 +67,8 @@
     },
     computed: {
       totalWatchDuration() {
-        //get the duration property
-        // var eventsArray = [];
-        // for (var i = 0; i < this.leadsView.events.length; i++) {
-        //     eventsArray.push(this.leadsView.events[i].watch_duration);
-        // }
-
-        // //group the eventsArray by id
-        // var groupedData = _.groupBy(this.leadsView.events, function (data) {
-        //   //console.log(data.identifier)
-        //   return data.identifier;
-        // });
-        // console.log(groupedData);
-        // return groupedData
-        // Code
+        
+        //Used lodash for grouping the object and sum of watch_duration and in_view_duration
         const result = _(this.leadsView.events)
           .groupBy('identifier')
           .map((duration, id) => ({
@@ -91,7 +79,7 @@
             inViewDuration: _.sumBy(duration, function (d) {
               return parseInt(d.in_view_duration);
             }),
-            type: '',
+            //type: '',
           }))
           .value();
 
@@ -105,8 +93,6 @@
         //get data from json
         this.$http.get("http://localhost:8080/static/leads_view_" + id + ".json").then((response) => {
           this.leadsView = response.data.data;
-          this.leadsEvent = response.data.data.events;
-          console.log(response.data.data);
           this.state.isRetrieving = false;
         })
       }
