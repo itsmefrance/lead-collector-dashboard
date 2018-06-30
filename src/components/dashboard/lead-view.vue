@@ -25,66 +25,29 @@
         </p>
         <br>
         <p>Duration</p>
-        <ul v-for="(event, index) in totalWatchDuration" :key="index">
-          <li>
-            <p>ID:
-              <strong>{{event.identifier}}</strong>
-            </p>
-          </li>
-          <li v-if="event.watchDuration">
-            <p>Watch Duration:
-              <strong>{{event.watchDuration}}</strong>
-            </p>
-          </li>
-          <li v-else></li>
-          <li v-if="event.inViewDuration">
-            <p>In View Duration:
-              <strong>{{event.inViewDuration}}</strong>
-            </p>
-          </li>
-          <li v-else></li>
-        </ul>
+        <video-event :events="leadsView.events"></video-event>
+        <br>
+        <text-event  :events="leadsView.events"></text-event>
       </div>
     </div>
   </div>
 </template>
 <script>
+  import videoEvent from '../event-type/video-event';
+  import textEvent from '../event-type/text-event';
+
   export default {
     data() {
       return {
         leadsView: "",
-        leadsEvent: "",
-        eventType: "",
-        eventIdentifier: "",
-        eventDuration: "",
         state: {
           isRetrieving: false,
-        }
+        },
       }
     },
     created() {
       this.retrieveData();
-    },
-    computed: {
-      totalWatchDuration() {
-        
-        //Used lodash for grouping the object and sum of watch_duration and in_view_duration
-        const result = _(this.leadsView.events)
-          .groupBy('identifier')
-          .map((duration, id) => ({
-            identifier: id,
-            watchDuration: _.sumBy(duration, function (e) {
-              return parseInt(e.watch_duration);
-            }),
-            inViewDuration: _.sumBy(duration, function (d) {
-              return parseInt(d.in_view_duration);
-            }),
-            //type: '',
-          }))
-          .value();
 
-        return result;
-      }
     },
     methods: {
       retrieveData() {
@@ -94,8 +57,13 @@
         this.$http.get("http://localhost:8080/static/leads_view_" + id + ".json").then((response) => {
           this.leadsView = response.data.data;
           this.state.isRetrieving = false;
-        })
-      }
+        });
+
+      },
+    },
+    components: {
+      'video-event': videoEvent,
+      'text-event': textEvent,
     }
   }
 
