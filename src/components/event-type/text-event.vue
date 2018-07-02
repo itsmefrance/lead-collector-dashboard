@@ -21,7 +21,7 @@
       getDuration() {
         var durationArr = [];
         var durationConverted = [];
-        var durationTotal, sum;
+        var durationTotal;
         //create an array of duration values. 
         for (var i = 0; i < this.events.length; i++) {
           if (this.events[i].type == 'text') {

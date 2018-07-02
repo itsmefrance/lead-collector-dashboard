@@ -47,10 +47,10 @@
                   <!-- <span class="fa arrow"></span> -->
                 </a>
               </router-link>
-              <router-link to="/">
+              <router-link to="/timeline">
                 <a href="#">
                   <!-- <i class="fa fa-th-large"></i> -->
-                  <span class="nav-label">Events Collective</span>
+                  <span class="nav-label">Events Timeline</span>
                   <!-- <span class="fa arrow"></span> -->
                 </a>
               </router-link>
@@ -88,11 +88,11 @@
               </a>
             </div>
             <ul class="nav navbar-top-links navbar-right">
-              <li>
+              <!-- <li>
                 <a href="#">
                   <i class="fa fa-sign-out"></i> Log In
                 </a>
-              </li>
+              </li> -->
             </ul>
           </nav>
         </div>
