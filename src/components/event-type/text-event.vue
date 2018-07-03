@@ -14,6 +14,7 @@
     data(){
         return {
             type: "",
+            date: "",
         }
     },
     props: ['events'],
