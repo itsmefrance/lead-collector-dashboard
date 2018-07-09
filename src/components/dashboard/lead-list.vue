@@ -1,34 +1,36 @@
 <template>
-  <div>
-    <div class="ibox-title">
-      <h2>Leads</h2>
-    </div>
-    <div class="ibox-content">
-      <div>
-        <div v-if="isRetrieving">
-          loading . . .
-        </div>
-        <div v-else>
-          <table class="table table-bordered">
-            <thead>
-              <tr>
-                <th>First Name</th>
-                <th>Last Name</th>
-                <th>Email Address</th>
-                <th>Action</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr class="clickable-row" v-for="(item, index) in leads" :key="index">
-                <td>{{item.contact.first_name}}</td>
-                <td>{{item.contact.last_name}}</td>
-                <td>{{item.contact.email_address}}</td>
-                <td>
-                  <router-link :to="{ name: 'leads-view', params: { id: item.id } }" class="btn btn-default">View</router-link>
-                </td>
-              </tr>
-            </tbody>
-          </table>
+  <div class="wrapper wrapper-content">
+    <div class="row animated fadeInRight">
+      <div class="ibox-title">
+        <h2>Leads</h2>
+      </div>
+      <div class="ibox-content">
+        <div>
+          <div v-if="isRetrieving">
+            loading . . .
+          </div>
+          <div v-else>
+            <table class="table table-bordered">
+              <thead>
+                <tr>
+                  <th>First Name</th>
+                  <th>Last Name</th>
+                  <th>Email Address</th>
+                  <th>Action</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr class="clickable-row" v-for="(item, index) in leads" :key="index">
+                  <td>{{item.contact.first_name}}</td>
+                  <td>{{item.contact.last_name}}</td>
+                  <td>{{item.contact.email_address}}</td>
+                  <td>
+                    <router-link :to="{ name: 'leads-view', params: { id: item.id } }" class="btn btn-default">View</router-link>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
         </div>
       </div>
     </div>

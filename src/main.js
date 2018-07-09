@@ -18,11 +18,11 @@ Vue.use(VueResource);
 Vue.use(VueLocalStorage);
 Vue.use(axios, VueAxios);
 Vue.use(VueMoment);
-Vue.use({
-  install: function(Vue, options){
-      Vue.prototype.$jQuery = require('jquery');
-  }
-})
+// Vue.use({
+//   install: function(Vue, options){
+//       Vue.prototype.$jQuery = require('jquery');
+//   }
+// })
 
 const router = new VueRouter({
   mode: 'history',

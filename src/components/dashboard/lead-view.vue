@@ -8,6 +8,7 @@
         loading . . .
       </div>
       <div v-else>
+
         <p>First Name:
           <strong>{{leadsView.contact.first_name}}</strong>
         </p>
@@ -28,6 +29,10 @@
         <video-event :events="leadsView.events"></video-event>
         <br>
         <text-event :events="leadsView.events"></text-event>
+        <br>
+        <router-link to="/">
+          Back to list
+        </router-link>
       </div>
     </div>
   </div>
