@@ -27,7 +27,7 @@
         <p>Duration</p>
         <video-event :events="leadsView.events"></video-event>
         <br>
-        <text-event  :events="leadsView.events"></text-event>
+        <text-event :events="leadsView.events"></text-event>
       </div>
     </div>
   </div>

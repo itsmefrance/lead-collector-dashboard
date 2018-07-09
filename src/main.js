@@ -8,6 +8,7 @@ import Routes from './routes'
 import VueLocalStorage from 'vue-localstorage'
 import axios from 'axios'
 import VueAxios from 'vue-axios'
+import VueMoment from 'vue-moment'
 
 Vue.config.productionTip = false
 window.$ = window.jQuery = require('jquery')
@@ -16,9 +17,10 @@ Vue.use(VueRouter);
 Vue.use(VueResource);
 Vue.use(VueLocalStorage);
 Vue.use(axios, VueAxios);
+Vue.use(VueMoment);
 Vue.use({
   install: function(Vue, options){
-      Vue.prototype.$jQuery = require('jquery'); // you'll have this.$jQuery anywhere in your vue project
+      Vue.prototype.$jQuery = require('jquery');
   }
 })
 
